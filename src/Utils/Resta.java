@@ -14,16 +14,18 @@ public class Resta implements Operaciones{
 		return operacion ("+", a, b,c,d);
 	}
 	public double resta (String operador , double...parametros ){
-		return operacion ("*", parametros);
+		return operacion ("+", parametros);
 	}
 	
 	@Override
 	
 	public double operacion(String operador, double... parametros) {
 		// TODO Auto-generated method stub
+		
 		double acumulador =0;
+		
 		for (int i = 0; i < parametros.length; i++) {
-			acumulador -=parametros [i];
+			acumulador -=  (acumulador == 0)? parametros[i]: acumulador - parametros[i];
 		}
 		return acumulador;
 	}
@@ -47,6 +49,7 @@ public class Resta implements Operaciones{
 	public double operacion(String operador, double a, double b, double c, double d) {
 		// TODO Auto-generated method stub
 		return a-b-c-d;
-	} 
+	}
+	
 	}
 

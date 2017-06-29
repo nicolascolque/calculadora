@@ -1,8 +1,10 @@
 package Controlador;
 
 import Utils.Ayudante;
-import Utils.suma;
-import Utils.suma.suma;
+import Utils.Multiplicacion;
+import Utils.Resta;
+import Utils.Suma;
+
 
 public class Logica 
 	{
@@ -11,12 +13,14 @@ public class Logica
 			String [] numeros;
 			double resultado=0;
 			
-			if (valor.contains("\\+")) 
+			if (valor.contains("+")) 
 					{
-						numeros =valor.split("+");
+						numeros =valor.split("\\+");
+						
 						if (numeros.length>1)
+				
 						{
-							Utils.suma sumar= new suma ();
+							Suma sumar= new Suma();
 							
 							switch (numeros.length) 
 							{
@@ -26,7 +30,7 @@ public class Logica
 								
 							case 3:
 								
-								resultado = sumar.suma("+",Ayudante.conversor (numeros[0]),Ayudante.conversor(numeros[1],Ayudante.conversor(numeros[2]));
+								resultado = sumar.suma("+",Ayudante.conversor(numeros[0]), Ayudante.conversor(numeros[1]),Ayudante.conversor(numeros[2]));
 							
 							break;
 							
@@ -35,30 +39,59 @@ public class Logica
 								break;
 							}
 						}
+							return resultado;
 					}
+		
 			if (valor.contains("-"))
 				{
-					numeros =valor.split("-");
+					numeros = valor.split("-");
+					
 					if (numeros.length>1)
 					{
-						Suma restar= new Resta ();
+						Resta restar= new Resta();
 						switch (numeros.length) 
 						{
 						case 2:
-							resultado = restar.Resta("+",Ayudante.conversor (numeros[0]),Ayudante.conversor(numeros[1]))
+							resultado = restar.resta("-",Ayudante.conversor (numeros[0]),Ayudante.conversor(numeros[1]));
 							break;
 						case 3:
-							
-							resultado = restar.Resta("+",Ayudante.conversor (numeros[0]),Ayudante.conversor(numeros[1],Ayudante.conversor(numeros[2]))
+							resultado = restar.resta("-",Ayudante.conversor(numeros[0]), Ayudante.conversor(numeros[1]), Ayudante.conversor(numeros[2]));
 						break;
 						
 						default:
-							resultado= restar.Resta("+",Ayudante.conversor(numeros));
+							resultado= restar.resta("-",Ayudante.conversor(numeros));
 							break;
 						}
 					}
-				
+					return resultado;
 				}
+			
+			
+		
+		if (valor.contains("*"))
+		{
+			numeros = valor.split("\\*");
+			
+			if (numeros.length>1)
+			{
+				Multiplicacion multiplicar= new Multiplicacion();
+				switch (numeros.length) 
+				
+				{
+				case 2:
+					resultado = multiplicar.multiplicacion("*",Ayudante.conversor (numeros[0]),Ayudante.conversor(numeros[1]));
+					break;
+				case 3:
+					resultado = multiplicar.multiplicacion("*",Ayudante.conversor(numeros[0]), Ayudante.conversor(numeros[1]), Ayudante.conversor(numeros[2]));
+				break;
+				
+				default:
+					resultado= multiplicar.multiplicacion("*",Ayudante.conversor(numeros));
+					break;
+				}
+			}
+		
 		}
-		return resultado;
+	  return resultado;
 	}
+}

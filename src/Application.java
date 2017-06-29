@@ -5,11 +5,11 @@ public class Application
 	{
 	 public static void main(String[] args)
 	 	{
-		 Pantalla Vista = new Pantallas ();
+		 Pantallas Vista = new Pantallas ();
 		 Logica controlador = new Logica();
 		 
-		 String valoringresado= Vista.ingresarvalor("Calculadora");
-		 Vista.mostrarMensaje("El resultado es: " + controlador.calcular(valoringresado));
+		 String valorIngresado = Vista.ingresarValor("Calculadora");
+		 Vista.mostrarMensaje("El resultado es: " +controlador.calcular(valorIngresado));
 		 
 		 
 	 	}

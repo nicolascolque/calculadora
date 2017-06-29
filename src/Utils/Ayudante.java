@@ -11,7 +11,7 @@ public class Ayudante {
 		}
 		return valorConvertido;
 	}
-    public static double[] onversor(String[] valores)
+    public static double[] conversor(String[] valores)
     {
     	double[] auxiliar=new double[valores.length];
     	for (int i = 0; i < valores.length; i++)
@@ -19,5 +19,6 @@ public class Ayudante {
     		auxiliar[i]= conversor(valores[i]);
 			
 		}
+    	return auxiliar;
     }
 }

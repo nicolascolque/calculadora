@@ -2,9 +2,9 @@ package Utils;
 
 
 	
-public class suma implements Operaciones{
+public class Suma implements Operaciones{
 
-	public suma (){}
+	public Suma (){}
 	
 	public double suma (String operador , double a ,double b ){
 		return operacion ("+", a, b);
@@ -45,5 +45,5 @@ public class suma implements Operaciones{
 		// TODO Auto-generated method stub
 		return a+b+c+d;
 	} 
-	}
+	
 }
