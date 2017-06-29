@@ -1,6 +1,7 @@
 package Controlador;
 
 import Utils.Ayudante;
+import Utils.Division;
 import Utils.Multiplicacion;
 import Utils.Resta;
 import Utils.Suma;
@@ -87,6 +88,32 @@ public class Logica
 				
 				default:
 					resultado= multiplicar.multiplicacion("*",Ayudante.conversor(numeros));
+					break;
+				}
+			}
+		return resultado;
+		}
+	  
+	
+		if (valor.contains("/"))
+		{
+			numeros = valor.split("\\/");
+			
+			if (numeros.length>1)
+			{
+				Division dividir = new Division();
+				switch (numeros.length) 
+				
+				{
+				case 2:
+					resultado = dividir.division("/",Ayudante.conversor (numeros[0]),Ayudante.conversor(numeros[1]));
+					break;
+				case 3:
+					resultado = dividir.division("/",Ayudante.conversor(numeros[0]), Ayudante.conversor(numeros[1]), Ayudante.conversor(numeros[2]));
+				break;
+				
+				default:
+					resultado= dividir.division("/",Ayudante.conversor(numeros));
 					break;
 				}
 			}
